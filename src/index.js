@@ -15,9 +15,17 @@ const user = {
   lastName: 'Bun'
 };
 
+function getGreeting(user) {
+  if(user) {
+    return <h1>Hello, {formatName(user)}!</h1>;
+  }
+  return <h1>hello, stranger</h1>;
+}
+
 const element = (
-  <h1>hello {formatName(user)}</h1>
+  <h1>{getGreeting(user)}</h1>
 )
+
 root.render(element)
 
 
